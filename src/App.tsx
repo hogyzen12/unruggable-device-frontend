@@ -1,4 +1,14 @@
+import Hero from "./components/Hero";
+import Hightlights from "./components/Hightlights";
+import Navbar from "./components/Navbar";
+
 const App = () => {
-  return <div className="text-3xl">App</div>;
+  return (
+    <main className="bg-black">
+      <Navbar />
+      <Hero />
+      <Hightlights />
+    </main>
+  );
 };
 export default App;
