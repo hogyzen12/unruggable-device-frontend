@@ -48,7 +48,7 @@ const VideoCarousel = () => {
     }
   }, [startPlay, videoId, isPlaying, loaded]);
 
-  const handleLoaded = (index: number, event: SyntheticEvent<HTMLVideoElement, Event>) => {
+  const handleLoaded = (event: SyntheticEvent<HTMLVideoElement, Event>) => {
     setLoaded((prev) => [...prev, event]);
   };
 
@@ -146,7 +146,7 @@ const VideoCarousel = () => {
                     }));
                   }}
                   onEnded={() => (index !== 3 ? handleProcess("video-end", index) : handleProcess("video-last", index))}
-                  onLoadedMetadata={(event) => handleLoaded(index, event)}
+                  onLoadedMetadata={(event) => handleLoaded(event)}
                 >
                   <source src={slide.video} type="video/mp4" />
                 </video>
