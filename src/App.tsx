@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import Hightlights from "./components/Hightlights";
 import Navbar from "./components/Navbar";
+import PhoneModel from "./components/PhoneModel";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Hightlights />
+      <PhoneModel />
     </main>
   );
 };
