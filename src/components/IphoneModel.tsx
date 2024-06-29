@@ -10,14 +10,7 @@ import * as Three from "three";
 import { useGLTF, useTexture } from "@react-three/drei";
 import { useEffect } from "react";
 
-interface IphoneModelProps {
-  item: {
-    img: string;
-    color: string[];
-  };
-}
-
-function IphoneModel(props: IphoneModelProps) {
+function IphoneModel(props: any) {
   const { nodes, materials } = useGLTF("/models/scene.glb") as { nodes: any; materials: Record<string, any> };
 
   const texture = useTexture(props.item.img);

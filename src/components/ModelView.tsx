@@ -17,7 +17,11 @@ type ModelViewProps = {
 
 const ModelView = ({ index, groupRef, gsapType, controlRef, setRotation, item, size }: ModelViewProps) => {
   return (
-    <View index={index} id={gsapType} className={`size-full cursor-pointer ${index === 2 ? "-right-full" : ""}`}>
+    <View
+      index={index}
+      id={gsapType}
+      className={`absolute size-full cursor-pointer ${index === 2 ? "-right-full" : ""}`}
+    >
       <ambientLight intensity={0.3} />
       <PerspectiveCamera makeDefault position={[0, 0, 4]} />
       <Lights />
