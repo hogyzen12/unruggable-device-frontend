@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Apple 3js Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a landing page clone of the Apple website using Three.js. The website consists of a 3D model of the Apple iPhone which can be rotated. The Carousel along with 3D model and videos are animated using GreenSock Animation Platform (GSAP).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **📲 3D Model Interaction**: Three.js renders a detailed 3D model of the Apple iPhone, allowing users to rotate and view it from different angles.
 
-## Expanding the ESLint configuration
+- **🎞️ Dynamic Animations**: Smooth, engaging animations for the 3D model, video content, and UI elements powered by GSAP.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **📐 Responsive Design**: Responsive layout ensures the website looks great on all devices, from mobile phones to desktops.
 
-- Configure the top-level `parserOptions` property like this:
+- **📜 Scroll Interactions**: GSAP-powered scroll-triggered animations for an interactive storytelling experience.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+- **🎥 Video Carousel**: Showcases additional iPhone content through an engaging video carousel.
+
+- **🖱️ Interactive UI Components**: Custom navbar, feature sections, and footer designed for ease of navigation and enhanced user experience.
+
+## Technologies Used
+
+![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+![Three.js](https://img.shields.io/badge/Three.js-black.svg?style=for-the-badge&logo=three.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02.svg?style=for-the-badge&logo=GreenSock&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF.svg?style=for-the-badge&logo=Vite&logoColor=white)
+![Prettier](https://img.shields.io/badge/Prettier-F7B93E.svg?style=for-the-badge&logo=Prettier&logoColor=black)
+
+## Installation
+
+1. Clone the repository.
+2. Install the dependencies
+
+```
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Run the development server
+
+```
+npm run dev
+```
+
+4. Open [http://localhost:5173](http://localhost:5173) to view the page in the browser.
