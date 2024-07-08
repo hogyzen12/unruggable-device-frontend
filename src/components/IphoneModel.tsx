@@ -13,7 +13,7 @@ import { useEffect } from "react";
 function IphoneModel(props: any) {
   const { nodes, materials } = useGLTF("/models/scene.glb") as { nodes: any; materials: Record<string, any> };
 
-  const texture = useTexture(props.item.img);
+  const texture = useTexture(props.item.img) as Three.Texture;
 
   useEffect(() => {
     Object.entries(materials).map((material) => {
