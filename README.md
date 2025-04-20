@@ -1,18 +1,23 @@
-# Apple 3js Website
+# Unruggable T1 Pro Landing Page
 
-This is a landing page clone of the Apple website using Three.js. The website consists of a 3D model of the Apple iPhone which can be rotated. The Carousel along with 3D model and videos are animated using GreenSock Animation Platform (GSAP).
+This is the official landing page for **Unruggable T1 Pro** — the first open-source hardware wallet designed specifically for Solana. The site features a 3D model of the Unruggable T1 Pro, animated highlights, and interactive product showcases. All branding and marketing copy are tailored for Unruggable and the Solana ecosystem.
 
 ## Features
 
-- **📲 3D Model Interaction**: Three.js renders a detailed 3D model of the Apple iPhone, allowing users to rotate and view it from different angles.
+- **🔒 Solana-First Hardware Wallet**: Unruggable T1 Pro is purpose-built for the Solana ecosystem, with native support for Solana features and security.
+
+- **🛡️ Open Source & Transparent**: All firmware and software are open source, ensuring transparency and trust.
+
+- **🔁 Animated Highlights Carousel**: The highlights carousel loops automatically and features clickable dots for direct navigation. Each highlight showcases a core Unruggable feature:
+  - Open Source. Transparent. Designed just for Solana.
+  - Titanium. So strong. So light. So Pro.
+  - Squads native multisig integration & custom firmware with transaction introspection.
+
+- **📲 3D Model Interaction**: Three.js renders a detailed 3D model of the Unruggable T1 Pro, allowing users to rotate and view it from different angles.
 
 - **🎞️ Dynamic Animations**: Smooth, engaging animations for the 3D model, video content, and UI elements powered by GSAP.
 
-- **📐 Responsive Design**: Responsive layout ensures the website looks great on all devices, from mobile phones to desktops.
-
-- **📜 Scroll Interactions**: GSAP-powered scroll-triggered animations for an interactive storytelling experience.
-
-- **🎥 Video Carousel**: Showcases additional iPhone content through an engaging video carousel.
+- **📐 Responsive Design**: Looks great on all devices, from mobile phones to desktops.
 
 - **🖱️ Interactive UI Components**: Custom navbar, feature sections, and footer designed for ease of navigation and enhanced user experience.
 
@@ -29,16 +34,28 @@ This is a landing page clone of the Apple website using Three.js. The website co
 ## Installation
 
 1. Clone the repository.
-2. Install the dependencies
+2. Install the dependencies:
 
-```
+```bash
 npm install
 ```
 
-3. Run the development server
+3. Run the development server:
 
-```
+```bash
 npm run dev
 ```
 
 4. Open [http://localhost:5173](http://localhost:5173) to view the page in the browser.
+
+## Recent Updates
+
+- All Apple/iPhone branding and references have been replaced with Unruggable and Solana-specific messaging.
+- Highlights carousel now loops and features clickable dots for navigation.
+- New marketing copy and feature highlights focused on open source, Solana, and security.
+- Titanium and security features are emphasized throughout the site.
+- General UI/UX improvements for a more modern, focused landing page.
+
+## About Unruggable
+
+Unruggable T1 Pro is the first hardware wallet designed specifically for Solana. It is open source, transparent, and engineered for maximum security. With titanium construction, native multisig, and custom firmware, Unruggable is the only wallet you need for the next era of Solana.
