@@ -34,12 +34,11 @@ const Features = () => {
       <div className="screen-max-width">
         <div className="mb-12 w-full">
           <h2 id="features_title" className="section-heading">
-            Explore the full story.
+            Become Unruggable.
           </h2>
         </div>
         <div className="flex flex-col items-center justify-center overflow-hidden">
           <div className="mb-24 mt-32 pl-24">
-            <h2 className="text-5xl font-semibold lg:text-7xl">iPhone.</h2>
             <h2 className="text-5xl font-semibold lg:text-7xl">Forged in titanium.</h2>
           </div>
           <div className="flex-center flex-col gap-4 sm:px-10">
@@ -69,19 +68,12 @@ const Features = () => {
               <div className="feature-text-container">
                 <div className="flex-center flex-1">
                   <p className="feature-text g_text">
-                    iphone 15 Pro is{" "}
-                    <span className="text-white">The first iPhone to feature an aerospace-grade titanium body</span>,
-                    using the same alloy that spacecrafts use for missions to Mars. The result is a device that’s
-                    incredibly strong, yet lightweight, with a unique texture that’s both durable and stunning.
+                    <span className="text-white">Titanium.</span> So strong. So light. So Pro.
                   </p>
                 </div>
                 <div className="flex-center flex-1">
                   <p className="feature-text g_text">
-                    <span className="text-white">
-                      A leap in smartphone engineering with its cutting-edge Liquid Metal design.
-                    </span>{" "}
-                    Crafted with a revolutionary material, it offers unparalleled durability and a sleek, futuristic
-                    aesthetic. Experience the pinnacle of technology, designed for tomorrow's adventures.
+                    <span className="text-white">Unruggable is the first hardware wallet designed specifically for Solana.</span> Open source. Transparent. Secure. The only wallet you need for the next era of Solana.
                   </p>
                 </div>
               </div>

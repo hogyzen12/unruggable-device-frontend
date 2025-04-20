@@ -8,6 +8,7 @@ import { pauseImg, playImg, replayImg } from "../utils";
 gsap.registerPlugin(ScrollTrigger);
 
 const VideoCarousel = () => {
+  const [progress, setProgress] = useState(0);
   const videoRef = useRef<HTMLVideoElement[]>([]);
   const videoSpanRef = useRef<HTMLSpanElement[]>([]);
   const videoContainerRef = useRef<HTMLSpanElement[]>([]);
@@ -42,7 +43,7 @@ const VideoCarousel = () => {
   }, [isEnd, videoId]);
 
   useEffect(() => {
-    if (loaded.length > 3) {
+    if (loaded.length >= hightlightsSlides.length) {
       if (!isPlaying) {
         videoRef.current[videoId].pause();
       } else {
@@ -50,6 +51,26 @@ const VideoCarousel = () => {
       }
     }
   }, [startPlay, videoId, isPlaying, loaded]);
+
+  // Progress bar sync with video
+  useEffect(() => {
+    let raf: number;
+    function updateProgress() {
+      const vid = videoRef.current[videoId];
+      if (vid && vid.duration) {
+        setProgress(Math.min((vid.currentTime / (hightlightsSlides[videoId]?.videoDuration || vid.duration)) * 100, 100));
+      } else {
+        setProgress(0);
+      }
+      raf = requestAnimationFrame(updateProgress);
+    }
+    if (isPlaying) {
+      raf = requestAnimationFrame(updateProgress);
+    } else {
+      setProgress(0);
+    }
+    return () => cancelAnimationFrame(raf);
+  }, [videoId, isPlaying, startPlay]);
 
   const handleLoaded = (event: SyntheticEvent<HTMLVideoElement, Event>) => {
     setLoaded((prev) => [...prev, event]);
@@ -107,7 +128,11 @@ const VideoCarousel = () => {
   const handleProcess = (type: string, index = 0) => {
     switch (type) {
       case "video-end":
-        setVideo((prev) => ({ ...prev, isEnd: true, videoId: index + 1 }));
+        if (index + 1 < hightlightsSlides.length) {
+          setVideo((prev) => ({ ...prev, isEnd: true, videoId: index + 1 }));
+        } else {
+          setVideo((prev) => ({ ...prev, isEnd: true, videoId: 0 })); // loop back to first
+        }
         break;
       case "video-last":
         setVideo((prev) => ({ ...prev, isLastVideo: true }));
@@ -148,7 +173,7 @@ const VideoCarousel = () => {
                       isPlaying: true,
                     }));
                   }}
-                  onEnded={() => (index !== 3 ? handleProcess("video-end", index) : handleProcess("video-last", index))}
+                  onEnded={() => (index !== hightlightsSlides.length - 1 ? handleProcess("video-end", index) : handleProcess("video-last", index))}
                   onLoadedMetadata={(event) => handleLoaded(event)}
                 >
                   <source src={slide.video} type="video/mp4" />
@@ -166,23 +191,28 @@ const VideoCarousel = () => {
         ))}
       </div>
       <div className="flex-center relative mt-10">
-        <div className="flex-center rounded-full bg-gray-300 px-7 py-5 backdrop-blur">
-          {videoRef.current.map((_, index) => (
-            <span
-              key={index}
-              ref={(el) => {
-                videoContainerRef.current[index] = el!;
-              }}
-              className="relative mx-2 size-3 rounded-full bg-gray-300"
-            >
+        <div className="flex flex-col items-center w-full">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            {hightlightsSlides.map((_, idx) => (
               <span
-                className="absolute size-full rounded-full"
-                ref={(el) => {
-                  videoSpanRef.current[index] = el!;
+                key={idx}
+                className={`inline-block h-3 w-3 rounded-full cursor-pointer transition-all duration-200 ${videoId === idx ? "bg-white scale-110 shadow" : "bg-gray-500"}`}
+                onClick={() => {
+                  setVideo((prev) => ({ ...prev, videoId: idx, isEnd: false, isPlaying: true, startPlay: true }));
+                  setProgress(0);
                 }}
               />
-            </span>
-          ))}
+            ))}
+          </div>
+          <div className="w-40 h-2 bg-gray-700 rounded-full shadow-inner relative overflow-hidden">
+            <div
+              className="h-full rounded-full bg-white"
+              style={{
+                width: `${progress}%`,
+                transition: progress === 0 ? 'none' : 'width 0.2s linear'
+              }}
+            />
+          </div>
         </div>
         <button
           className="control-btn"
