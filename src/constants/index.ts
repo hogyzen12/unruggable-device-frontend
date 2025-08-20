@@ -4,7 +4,8 @@ import {
   highlightFirstVideo,
 
   highlightSecondVideo,
-  highlightThirdVideo,
+  //highlightThirdVideo,
+  highlightFourthVideo,
   whiteImg,
   yellowImg,
 } from "../utils";
@@ -15,25 +16,24 @@ export const hightlightsSlides = [
   {
     id: 1,
     textLists: [
-      "Open Source. Transparent. Designed just for Solana."
+      "Open Source. Transparent. Plug and Play security engineered for Solana."
     ],
     video: highlightFirstVideo,
     videoDuration: 4,
   },
   {
     id: 2,
-    textLists: ["Titanium.", "So strong. So light. So Pro."],
-    video: highlightSecondVideo,
-    videoDuration: 5,
+    textLists: [
+      "2FA security. Engineered for Solana."
+    ],
+    video: highlightFourthVideo,
+    videoDuration: 3,
   },
   {
     id: 3,
-    textLists: [
-      "Sqauds Native integration for multisig security",
-      "Custom firmware with transaction introspection"
-    ],
-    video: highlightThirdVideo,
-    videoDuration: 2,
+    textLists: ["Titanium.", "So strong. So light. So Pro."],
+    video: highlightSecondVideo,
+    videoDuration: 5,
   },
 ];
 

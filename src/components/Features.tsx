@@ -38,24 +38,7 @@ const Features = () => {
           </h2>
         </div>
         <div className="flex flex-col items-center justify-center overflow-hidden">
-          <div className="mb-24 mt-32 pl-24">
-            <h2 className="text-5xl font-semibold lg:text-7xl">Forged in titanium.</h2>
-          </div>
           <div className="flex-center flex-col gap-4 sm:px-10">
-            <div className="flx relative h-[50vh] w-full items-center md:h-[60vh]">
-              <video
-                id="exploreVideo"
-                className="size-full rounded-xl object-cover object-center"
-                preload="none"
-                disablePictureInPicture
-                playsInline
-                muted
-                autoPlay
-                ref={videoRef}
-              >
-                <source src={exploreVideo} type="video/mp4" />
-              </video>
-            </div>
             <div className="relative flex w-full flex-col">
               <div className="feature-video-container">
                 <div className="h-[50vh] flex-1 overflow-hidden rounded-xl">

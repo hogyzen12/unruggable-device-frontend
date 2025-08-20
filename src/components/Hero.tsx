@@ -40,10 +40,20 @@ const Hero = () => {
         </div>
       </div>
       <div id="cta" className="flex translate-y-20 flex-col items-center opacity-0">
-        <a href="#highlights" className="btn">
-          Buy
-        </a>
-        <p className="text-xl font-normal">From $199/month or $999</p>
+        <div className="flex flex-col lg:flex-row gap-8 items-start lg:items-center justify-center w-full max-w-4xl">
+          <div className="flex flex-col items-center lg:items-end lg:text-right flex-1">
+            <a href="#highlights" className="btn mb-3">
+              Buy
+            </a>
+            <p className="text-lg font-normal text-center lg:text-right">From $42, shipping Q3 2025.</p>
+          </div>
+          <div className="flex flex-col items-center lg:items-start lg:text-left flex-1">
+            <a href="#" className="btn mb-3">
+              Download App
+            </a>
+            <p className="text-lg font-normal text-center lg:text-left">iOS, Android, macOS, Windows and Linux</p>
+          </div>
+        </div>
       </div>
     </section>
   );
