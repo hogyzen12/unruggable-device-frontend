@@ -161,7 +161,8 @@ const VideoCarousel = () => {
               <div className="flex-center size-full overflow-hidden rounded-3xl bg-black">
                 <video
                   id="video"
-                  className={`${slide.id === 2 && "pointer-events-none translate-x-44"}`}
+                  //className={`${slide.id === 2 && "pointer-events-none translate-x-44"}`}
+                  className={`${slide.id === 2 && "pointer-events-none"}`}
                   playsInline={true}
                   preload="auto"
                   muted
